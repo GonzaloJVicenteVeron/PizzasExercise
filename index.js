@@ -91,7 +91,7 @@ formulario.addEventListener ('submit', function (event){
 
     // Show up error message 
   
-    resultados.innerHTML = '<p id = "error-message"> No se encontró una pizza con el ID que ingresaste </p>';
+    resultados.innerHTML = '<p id = "error-message"> No se encontró una pizza con el ID que ingresaste. Por favor, ingrese otro ID. </p>';
   
 }});
 
