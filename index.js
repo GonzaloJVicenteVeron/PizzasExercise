@@ -51,7 +51,7 @@ const pizzas = [
 const formulario = document.getElementById ('search-form');
 const resultados = document.getElementById ('result.container');
 
-// Creat search's function 
+// Create search's function 
 
 formulario.addEventListener ('submit', function (event){
 
@@ -75,7 +75,16 @@ formulario.addEventListener ('submit', function (event){
     resultados.innerHTML = '<p id="error-message">Por favor, ingrese un número válido.</p>';}
     else if (encontrarPizza){
       //Show up pizza found
-      
+      const pizzaCard = document.createElement ('div');
+      pizzaCard.classList.add ('pizza-card');
+      pizzaCard.innerHTML = `
+      <h2> ${encontrarPizza.name} </h2>
+      <img src= "${encontrarPizza.imagen}" alt= ${encontrarPizza.name}>
+      <p> Precio: ${encontrarPizza.precio} </p>
+      `;
+      resultados.appendChild (pizzaCard)  
+    
+    
     }
 
 
