@@ -46,4 +46,22 @@ const pizzas = [
   },
 ];
 
+// Get form and container from HTML
 
+const formulario = document.getElementById ('search-form');
+const resultados = document.getElementById ('result.container');
+
+// Creat search's function 
+
+formulario.addEventListener ('submit', function (event){
+
+  event.preventDefault ();
+
+  //Get the value written on the imput
+
+  const pizzaId = parseInt (document.getElementById ('pizza-id').value);
+
+
+
+
+})
