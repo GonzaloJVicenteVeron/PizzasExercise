@@ -93,7 +93,10 @@ formulario.addEventListener ('submit', function (event){
   
     resultados.innerHTML = '<p id = "error-message"> No se encontró una pizza con el ID que ingresaste. Por favor, ingrese otro ID. </p>';
   
-}});
+}
+});
+
+// Load the last pizza searched and rendered from the localStorage when loading the page
 
 document.addEventListener('DOMContentLoaded', function() {
   
@@ -109,9 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       <h2>${lastPizza.nombre}</h2>
       <img src="${lastPizza.imagen}" alt="${lastPizza.nombre}">
-      <p>Precio: $${lastPizza.precio.toFixed(2)}</p>
+      <p>Precio: ${lastPizza.precio}</p>
     `;
     
-    resultContainer.appendChild(pizzaCard);
+    resultados.appendChild(pizzaCard);
   }
 });
