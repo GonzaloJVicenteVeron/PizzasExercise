@@ -61,7 +61,22 @@ formulario.addEventListener ('submit', function (event){
 
   const pizzaId = parseInt (document.getElementById ('pizza-id').value);
 
+  //Search the pizza by ID
+  
+  const encontrarPizza = pizzas.find (pizza => pizza.id === pizzaId);
 
+  //Clean up result's container 
+
+  resultados.innerHTML = '' ;
+
+  //Function
+
+  if (isNaN (pizzaId)) {
+    resultados.innerHTML = '<p id="error-message">Por favor, ingrese un número válido.</p>';}
+    else if (encontrarPizza){
+      //Show up pizza found
+      
+    }
 
 
 })
