@@ -85,7 +85,7 @@ formulario.addEventListener ('submit', function (event){
       resultados.appendChild (pizzaCard)  
     
     // Save pizza found on LocalStorage
-    localStorage.setItem('lastPizza', JSON.stringify(foundPizza));
+    localStorage.setItem('lastPizza', JSON.stringify(encontrarPizza));
     
   } else {
 
@@ -95,4 +95,23 @@ formulario.addEventListener ('submit', function (event){
   
 }});
 
-
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const lastPizza = JSON.parse(localStorage.getItem('lastPizza'));
+  
+  if (lastPizza) {
+    
+    const pizzaCard = document.createElement('div');
+    
+    pizzaCard.classList.add('pizza-card');
+  
+    pizzaCard.innerHTML = `
+      
+      <h2>${lastPizza.nombre}</h2>
+      <img src="${lastPizza.imagen}" alt="${lastPizza.nombre}">
+      <p>Precio: $${lastPizza.precio.toFixed(2)}</p>
+    `;
+    
+    resultContainer.appendChild(pizzaCard);
+  }
+});
