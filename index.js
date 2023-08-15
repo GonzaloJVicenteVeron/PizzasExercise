@@ -49,7 +49,7 @@ const pizzas = [
 // Get form and container from HTML
 
 const formulario = document.getElementById ('search-form');
-const resultados = document.getElementById ('result.container');
+const resultados = document.getElementById ('result-container');
 
 // Create search's function 
 
@@ -78,14 +78,21 @@ formulario.addEventListener ('submit', function (event){
       const pizzaCard = document.createElement ('div');
       pizzaCard.classList.add ('pizza-card');
       pizzaCard.innerHTML = `
-      <h2> ${encontrarPizza.name} </h2>
+      <h2> ${encontrarPizza.nombre} </h2>
       <img src= "${encontrarPizza.imagen}" alt= ${encontrarPizza.name}>
       <p> Precio: ${encontrarPizza.precio} </p>
       `;
       resultados.appendChild (pizzaCard)  
     
+    // Save pizza found on LocalStorage
+    localStorage.setItem('lastPizza', JSON.stringify(foundPizza));
     
-    }
+  } else {
+
+    // Show up error message 
+  
+    resultados.innerHTML = '<p id = "error-message"> No se encontró una pizza con el ID que ingresaste </p>';
+  
+}});
 
 
-})
